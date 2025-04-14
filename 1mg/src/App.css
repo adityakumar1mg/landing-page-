@@ -1,0 +1,20 @@
+.card_background_samll {
+    background-color: #e58961;
+}
+
+.card_background_grad {
+    background: rgb(103, 130, 44);
+    background: linear-gradient(90deg, rgba(103, 130, 44, 1) 0%, rgba(167, 219, 23, 1) 100%);
+}
+
+.card_back_gradient {
+    background: #FC5C7D;
+    background: -webkit-linear-gradient(to top, #6A82FB, #FC5C7D);
+    background: linear-gradient(to top, #6A82FB, #FC5C7D);
+}
+
+.text_show {
+
+    text-shadow: 3px 2px 0px rgba(0, 0, 1, 0.2);
+
+}
