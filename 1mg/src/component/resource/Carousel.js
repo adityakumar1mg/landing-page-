@@ -5,47 +5,41 @@ function Carousel({ banners, autoPlay = true, interval = 3000 }) {
   const carouselRef = useRef(null);
   const timerRef = useRef(null);
 
-  // Create infinite items by duplicating banners
   const infiniteBanners = banners.length > 1 ? [...banners, banners[0]] : banners;
 
-  // Handle smooth transition to next slide
   const goToNext = useCallback(() => {
     setIsTransitioning(true);
     setCurrentIndex(prev => {
       if (prev >= infiniteBanners.length - 1) {
-        // When reaching the end, we'll handle the reset after transition
         return prev + 1;
       }
       return prev + 1;
     });
   }, [infiniteBanners.length]);
 
-  // Handle smooth transition to previous slide
   const goToPrev = useCallback(() => {
     setIsTransitioning(true);
     setCurrentIndex(prev => {
       if (prev <= 0) {
-        // When reaching the start, we'll handle the reset after transition
         return prev - 1;
       }
       return prev - 1;
     });
   }, []);
 
-  // Handle transition end for infinite loop
+
   const handleTransitionEnd = useCallback(() => {
     if (currentIndex >= infiniteBanners.length - 1) {
-      // Disable transition for instant reset
+
       setIsTransitioning(false);
       setCurrentIndex(0);
     } else if (currentIndex <= 0) {
-      // Disable transition for instant reset
+
       setIsTransitioning(false);
       setCurrentIndex(infiniteBanners.length - 2);
     }
   }, [currentIndex, infiniteBanners.length]);
 
-  // Auto-play functionality
   useEffect(() => {
     if (!autoPlay || infiniteBanners.length <= 1) return;
 
@@ -56,7 +50,7 @@ function Carousel({ banners, autoPlay = true, interval = 3000 }) {
     return () => clearInterval(timerRef.current);
   }, [autoPlay, interval, infiniteBanners.length, goToNext]);
 
-  // Re-enable transition after reset
+
   useEffect(() => {
     if (!isTransitioning) {
       const timer = setTimeout(() => {
@@ -66,7 +60,7 @@ function Carousel({ banners, autoPlay = true, interval = 3000 }) {
     }
   }, [isTransitioning]);
 
-  // Touch event handlers for swipe
+
   const handleTouchStart = (e) => {
     clearInterval(timerRef.current);
     const touchX = e.touches[0].clientX;
@@ -88,7 +82,6 @@ function Carousel({ banners, autoPlay = true, interval = 3000 }) {
       goToPrev();
     }
 
-    // Restart autoplay if enabled
     if (autoPlay) {
       timerRef.current = setInterval(goToNext, interval);
     }
@@ -96,7 +89,6 @@ function Carousel({ banners, autoPlay = true, interval = 3000 }) {
 
   if (!banners || banners.length === 0) return null;
 
-  // Calculate the real position for indicators
   const realPosition = currentIndex % banners.length;
 
   return (
@@ -122,7 +114,6 @@ function Carousel({ banners, autoPlay = true, interval = 3000 }) {
         ))}
       </div>
 
-      {/* Navigation arrows */}
       {banners.length > 1 && (
         <>
           <button
@@ -144,7 +135,7 @@ function Carousel({ banners, autoPlay = true, interval = 3000 }) {
             </svg>
           </button>
 
-          {/* Indicators */}
+
           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
             {banners.map((_, index) => (
               <button
@@ -165,28 +156,3 @@ function Carousel({ banners, autoPlay = true, interval = 3000 }) {
 }
 
 export default Carousel;
-// Usage example:
-/*
-<BannerCarousel 
-  banners={[
-    {
-      discount: 20,
-      image_source: "/image1.jpg",
-      heading: "Fashion",
-      button_text: "Shop Now"
-    },
-    {
-      discount: 30,
-      image_source: "/image2.jpg",
-      heading: "Electronics",
-      button_text: "Explore Deals"
-    },
-    {
-      discount: 15,
-      image_source: "/image3.jpg",
-      heading: "Home Decor",
-      button_text: "View Offers"
-    }
-  ]}
-/>
-*/

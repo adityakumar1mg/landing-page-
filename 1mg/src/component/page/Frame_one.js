@@ -40,14 +40,24 @@ function FrameOne() {
                 </div>
                 
 
-                <div className="w-[90%] md:w-[80%] m-auto rounded-xl">
+                <div className="w-[90%] md:w-[80%] m-auto rounded-xl overflow-hidden">
                 <AHC/>
                     <Heading name="Explore more Services" />
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-                        <CorpoOffer name="Doctor" discount={"20% Off"} image_source={"https://onemg.gumlet.io/marketing/7ee4faca-e7e8-4eb1-b9fd-5f90ca1c2be3.png"} back_source="card_back_gradient2" />
+                    <div className="flex flex-col md:flex-row flex-wrap gap-4 justify-evenly md:gap-8 shadow-xl/30">
+                        <div className="">
+                            <VAS/>
+                        </div>
+                        <div>
+                            <VAS/>
+                        </div>
+                        <div>
+                            <VAS/>
+                        </div>
+                        
+                        {/* <CorpoOffer name="Doctor" discount={"20% Off"} image_source={"https://onemg.gumlet.io/marketing/7ee4faca-e7e8-4eb1-b9fd-5f90ca1c2be3.png"} back_source="card_back_gradient2" />
                         <CorpoOffer name="Medicine" discount={"3% Off"} image_source={"https://onemg.gumlet.io/marketing/84ccf3f4-1fa3-46c6-b2b0-923c932922d0.png"} back_source="card_back_gradient3" />
                         <CorpoOffer name="E-Consultion" subhead="Get" discount={"100% Off"} image_source={"https://onemg.gumlet.io/marketing/7ee4faca-e7e8-4eb1-b9fd-5f90ca1c2be3.png"} back_source="card_back_gradient" />
-                        <CorpoOffer name="Lab" discount={"50% Off"} image_source={"https://onemg.gumlet.io/marketing/845ce63e-6cdd-4960-a258-12b6e086a960.png"} back_source="card_back_gradient4" />
+                        <CorpoOffer name="Lab" discount={"50% Off"} image_source={"https://onemg.gumlet.io/marketing/845ce63e-6cdd-4960-a258-12b6e086a960.png"} back_source="card_back_gradient4" /> */}
 
                     </div>
                     <Heading name="Chat with our specialist doctors" />
@@ -64,7 +74,7 @@ function FrameOne() {
                     {/* <FlipCard/> */}
                 </div>
                 <div>
-                    <VAS/>
+                   
                 </div>
             </div>
         </>
