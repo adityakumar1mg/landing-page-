@@ -8,18 +8,21 @@ import CorpoOffer from "../card/CorporateOffer.js";
 import AHC from "../additional/AHC.js";
 import Carousel from "../resource/Carousel.js";
 import VAS from "../card/VAS.js";
+import Banner_n from "../bannerCard/Banner_n.js";
 
 
 
 function FrameOne() {
     let slide=[
-        <Banner image_source={"https://onemg.gumlet.io/marketing/7ee4faca-e7e8-4eb1-b9fd-5f90ca1c2be3.png"} discount={20} heading={"Lab Test"} button_text={"Order Now"} />,
-        <Banner image_source={"https://onemg.gumlet.io/marketing/7ee4faca-e7e8-4eb1-b9fd-5f90ca1c2be3.png"} discount={20} heading={"Lab Test"} button_text={"book Now"} />,
-        <Banner image_source={"https://onemg.gumlet.io/marketing/7ee4faca-e7e8-4eb1-b9fd-5f90ca1c2be3.png"} discount={20} heading={"Lab Test"} button_text={"edit"} />,
-        <Banner image_source={"https://onemg.gumlet.io/marketing/7ee4faca-e7e8-4eb1-b9fd-5f90ca1c2be3.png"} discount={20} heading={"Lab Test"} button_text={"edit"} />,
-        <Banner image_source={"https://onemg.gumlet.io/marketing/7ee4faca-e7e8-4eb1-b9fd-5f90ca1c2be3.png"} discount={20} heading={"Lab Test"} button_text={"edit"} />,
-        <Banner image_source={"https://onemg.gumlet.io/marketing/7ee4faca-e7e8-4eb1-b9fd-5f90ca1c2be3.png"} discount={20} heading={"Lab Test"} button_text={"edit"} />,
-        <Banner image_source={"https://onemg.gumlet.io/marketing/7ee4faca-e7e8-4eb1-b9fd-5f90ca1c2be3.png"} discount={20} heading={"Lab Test"} button_text={"edit"} />,
+        <Banner_n back_source = "https://onemg.gumlet.io/marketing/bdca1727-9bb4-473f-bf0c-7d74e9cdc8dd.png"/>,
+
+        // <Banner image_source={"https://onemg.gumlet.io/marketing/7ee4faca-e7e8-4eb1-b9fd-5f90ca1c2be3.png"} discount={20} heading={"Lab Test"} button_text={"Order Now"} />,
+        // <Banner image_source={"https://onemg.gumlet.io/marketing/7ee4faca-e7e8-4eb1-b9fd-5f90ca1c2be3.png"} discount={20} heading={"Lab Test"} button_text={"book Now"} />,
+        // <Banner image_source={"https://onemg.gumlet.io/marketing/7ee4faca-e7e8-4eb1-b9fd-5f90ca1c2be3.png"} discount={20} heading={"Lab Test"} button_text={"edit"} />,
+        // <Banner image_source={"https://onemg.gumlet.io/marketing/7ee4faca-e7e8-4eb1-b9fd-5f90ca1c2be3.png"} discount={20} heading={"Lab Test"} button_text={"edit"} />,
+        // <Banner image_source={"https://onemg.gumlet.io/marketing/7ee4faca-e7e8-4eb1-b9fd-5f90ca1c2be3.png"} discount={20} heading={"Lab Test"} button_text={"edit"} />,
+        // <Banner image_source={"https://onemg.gumlet.io/marketing/7ee4faca-e7e8-4eb1-b9fd-5f90ca1c2be3.png"} discount={20} heading={"Lab Test"} button_text={"edit"} />,
+        // <Banner image_source={"https://onemg.gumlet.io/marketing/7ee4faca-e7e8-4eb1-b9fd-5f90ca1c2be3.png"} discount={20} heading={"Lab Test"} button_text={"edit"} />,
     ]
     return (
         <>
@@ -39,7 +42,7 @@ function FrameOne() {
                     </div>
                 </div>
                 
-
+                <Banner_n/>
                 <div className="w-[90%] md:w-[80%] m-auto rounded-xl overflow-hidden">
                 <AHC/>
                     <Heading name="Explore more Services" />
@@ -48,10 +51,10 @@ function FrameOne() {
                             <VAS/>
                         </div>
                         <div>
-                            <VAS/>
+                            <VAS name="Lab" discount="30" />
                         </div>
                         <div>
-                            <VAS/>
+                            <VAS name="E-consultation" discount="4"/>
                         </div>
                         
                         {/* <CorpoOffer name="Doctor" discount={"20% Off"} image_source={"https://onemg.gumlet.io/marketing/7ee4faca-e7e8-4eb1-b9fd-5f90ca1c2be3.png"} back_source="card_back_gradient2" />
