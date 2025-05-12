@@ -9,13 +9,16 @@ import AHC from "../additional/AHC.js";
 import Carousel from "../resource/Carousel.js";
 import VAS from "../card/VAS.js";
 import Banner_n from "../bannerCard/Banner_n.js";
+import BannerImg from "../bannerCard/BannerImg.js";
 
 
 
 function FrameOne() {
     let slide=[
-        <Banner_n back_source = "https://onemg.gumlet.io/marketing/bdca1727-9bb4-473f-bf0c-7d74e9cdc8dd.png"/>,
-
+        // <Banner_n
+        // <Banner_n/>,
+        //  back_source = "https://onemg.gumlet.io/marketing/bdca1727-9bb4-473f-bf0c-7d74e9cdc8dd.png"/>,
+        <BannerImg back_source={"https://onemg.gumlet.io/marketing/84ba9b83-56f6-40cb-9df8-8e39eab98abe.png"}/>,
         // <Banner image_source={"https://onemg.gumlet.io/marketing/7ee4faca-e7e8-4eb1-b9fd-5f90ca1c2be3.png"} discount={20} heading={"Lab Test"} button_text={"Order Now"} />,
         // <Banner image_source={"https://onemg.gumlet.io/marketing/7ee4faca-e7e8-4eb1-b9fd-5f90ca1c2be3.png"} discount={20} heading={"Lab Test"} button_text={"book Now"} />,
         // <Banner image_source={"https://onemg.gumlet.io/marketing/7ee4faca-e7e8-4eb1-b9fd-5f90ca1c2be3.png"} discount={20} heading={"Lab Test"} button_text={"edit"} />,
@@ -48,13 +51,13 @@ function FrameOne() {
                     <Heading name="Explore more Services" />
                     <div className="flex flex-col md:flex-row flex-wrap gap-4 justify-evenly md:gap-8 shadow-xl/30">
                         <div className="">
-                            <VAS/>
+                            <VAS css="trans_flip" image_source="https://onemg.gumlet.io/marketing/592ca4c2-acce-49c4-a391-a6ea10f778cc.png"/>
                         </div>
                         <div>
                             <VAS name="Lab" discount="30" />
                         </div>
                         <div>
-                            <VAS name="E-consultation" discount="4"/>
+                            <VAS name="E-consultation" discount="4" image_source="https://onemg.gumlet.io/marketing/446bda92-6704-4d24-a2cc-b87b3f3518d2.png"/>
                         </div>
                         
                         {/* <CorpoOffer name="Doctor" discount={"20% Off"} image_source={"https://onemg.gumlet.io/marketing/7ee4faca-e7e8-4eb1-b9fd-5f90ca1c2be3.png"} back_source="card_back_gradient2" />
